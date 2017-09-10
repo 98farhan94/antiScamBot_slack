@@ -20,22 +20,22 @@ def initSettings():
                                  'hitbtc.com','bitcointalk.org']
 
     #Registering Parameters
-    Settings['SLACK_ADMIN_TOKEN'] = input("Specify admin (OAuth) access token: ")       # SLACK_ADMIN_TOKEN
-    Settings['SLACK_BOT_TOKEN']   = input("Specify bot access token: ")                 # SLACK_BOT_TOKEN
-    Settings['SLACK_BOT_EMOJI']   = input("Specify bot emoji avatar ( e.g. :joy: ): ")  # SLACK_BOT_EMOJI
+    Settings['SLACK_ADMIN_TOKEN'] = raw_input("Specify admin (OAuth) access token: ")       # SLACK_ADMIN_TOKEN
+    Settings['SLACK_BOT_TOKEN']   = raw_input("Specify bot access token: ")                 # SLACK_BOT_TOKEN
+    Settings['SLACK_BOT_EMOJI']   = raw_input("Specify bot emoji avatar ( e.g. :joy: ): ")  # SLACK_BOT_EMOJI
 
     #Consensus
-    Settings['CONSENSUS'] = int(input("\nNumber of moderator required for concensus (2 or more is recommended): "))  
+    Settings['CONSENSUS'] = int(raw_input("\nNumber of moderator required for concensus (2 or more is recommended): "))  
 
     while Settings['CONSENSUS'] < 1:
-        Settings['CONSENSUS'] = int(input('Please put at least 1'))
+        Settings['CONSENSUS'] = int(raw_input('Please put at least 1'))
 
 
     #If URL filter or not
-    Settings['URLFILTER'] = input("\nDo you want the bot to filter URLs (y or n)? y is recommended: ")
+    Settings['URLFILTER'] = raw_input("\nDo you want the bot to filter URLs (y or n)? y is recommended: ")
 
     while not Settings['URLFILTER'] == 'y' and not Settings['URLFILTER'] == 'n':
-        Settings['URLFILTER'] = input("Please answer with y or n: ")
+        Settings['URLFILTER'] = raw_input("Please answer with y or n: ")
 
     #Putting in binary
     if Settings['URLFILTER'] == 'y': 
